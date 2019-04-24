@@ -1,5 +1,4 @@
 var express = require("express");
-var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Our scraping tools
@@ -19,7 +18,6 @@ var app = express();
 // Configure middleware
 
 // Use morgan logger for logging requests
-app.use(logger("dev"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
