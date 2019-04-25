@@ -7,14 +7,6 @@ $.getJSON("/articles", function(data) {
   }
 });
 
-$.ajax({
-  method: "GET",
-  url: "/"
-}).then(function() {
-  console.log("do nothing")
-})
-
-
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
@@ -84,8 +76,8 @@ $(document).on("click", "#scrape-btn", function() {
     url: "/scrape"
   }).then(function() {
     console.log("Scrape complete")
-    location.reload();
   })
+  location.reload();
 })
 
 $(document).on("click", "#clear-btn", function() {
@@ -95,5 +87,5 @@ $(document).on("click", "#clear-btn", function() {
   }).then(function(){
     console.log("cleared all")
   })
-  location.reload();
+  location.reload()
 })
