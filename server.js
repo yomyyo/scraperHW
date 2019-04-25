@@ -30,6 +30,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 mongoose.connect(MONGODB_URI);
 
 // Routes
+app.get("/", function(req, res) {
+  console.log("do nothing");
+})
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
@@ -119,7 +122,11 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
-app.delete()
+app.delete("/clear", function(req, res) {
+  db.Article.deleteMany({}).then(function(){
+    console.log("deleted");
+  });
+});
 
 // Start the server
 app.listen(PORT, function() {

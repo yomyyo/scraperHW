@@ -7,6 +7,13 @@ $.getJSON("/articles", function(data) {
   }
 });
 
+$.ajax({
+  method: "GET",
+  url: "/"
+}).then(function() {
+  console.log("do nothing")
+})
+
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
@@ -79,4 +86,14 @@ $(document).on("click", "#scrape-btn", function() {
     console.log("Scrape complete")
     location.reload();
   })
+})
+
+$(document).on("click", "#clear-btn", function() {
+  $.ajax({
+    method:"DELETE",
+    url: "/clear"
+  }).then(function(){
+    console.log("cleared all")
+  })
+  location.reload();
 })
