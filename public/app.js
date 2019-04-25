@@ -70,3 +70,13 @@ $(document).on("click", "#savenote", function() {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+$(document).on("click", "#scrape-btn", function() {
+  $.ajax({
+    method:"GET",
+    url: "/scrape"
+  }).then(function() {
+    console.log("Scrape complete")
+    location.reload();
+  })
+})

@@ -66,6 +66,7 @@ app.get("/scrape", function(req, res) {
     // Send a message to the client
     res.send("Scrape Complete");
   });
+  
 });
 
 // Route for getting all Articles from the db
@@ -117,6 +118,8 @@ app.post("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
+
+app.delete()
 
 // Start the server
 app.listen(PORT, function() {
